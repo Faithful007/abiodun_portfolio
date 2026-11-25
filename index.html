@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abiodun Adebowale Ilugbusi — AI engineer and computer scientist building agentic AI, RAG and simulation-based decision-support systems for safety-critical transport infrastructure, with twelve years of higher-education teaching.">
+  <title>Abiodun Ilugbusi | Agentic AI &amp; Decision-Support Systems for Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --card: #141f36;
+      --line: #223052;
+      --text: #e6ebf5;
+      --muted: #9aa8c7;
+      --accent: #5aa9ff;
+      --accent-2: #8fd3ff;
+      --tag: #1c2a47;
+      --ok: #3ddc97;
+      --warn: #ffc857;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; margin: 0; letter-spacing: -0.01em; }
+
+    /* ---------- Top nav ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,18,32,0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .inner {
+      max-width: 1000px; margin: auto; padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+    .topbar nav a { color: var(--muted); margin-left: 18px; font-weight: 500; font-size: 0.95rem; }
+    .topbar nav a:hover { color: var(--text); text-decoration: none; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      max-width: 1000px; margin: auto; padding: 72px 20px 56px;
+      display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+    }
+    .hero h1 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.15; }
+    .hero .role { color: var(--accent-2); font-weight: 600; margin: 12px 0 4px; font-size: 1.1rem; }
+    .hero .lead { color: var(--muted); max-width: 58ch; margin: 10px 0 24px; }
+    .hero .meta { color: var(--muted); font-size: 0.95rem; }
+    .hero .meta span { margin-right: 18px; white-space: nowrap; }
+    .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600;
+      border: 1px solid var(--line); color: var(--text); background: var(--card);
+    }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #06111f; }
+    .btn:hover { text-decoration: none; filter: brightness(1.1); }
+
+    /* Passport-style photo: 35 × 45 mm ratio */
+    .photo-wrap { text-align: center; }
+    .photo {
+      width: 168px; height: 216px; object-fit: cover; object-position: center top;
+      border-radius: 14px; border: 3px solid var(--line);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      background: var(--card);
+    }
+    .photo-wrap small { display: block; color: var(--muted); margin-top: 10px; font-size: 0.85rem; }
+
+    /* ---------- Sections ---------- */
+    main { max-width: 1000px; margin: auto; padding: 0 20px 40px; }
+    section { padding: 48px 0; border-top: 1px solid var(--line); }
+    section h2 { font-size: 1.7rem; color: var(--accent-2); margin-bottom: 20px; }
+    .section-intro { color: var(--muted); max-width: 70ch; margin-bottom: 24px; }
+
+    .grid { display: grid; gap: 18px; }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px;
+    }
+    .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .card p { margin: 0 0 12px; color: var(--text); }
+    .card .sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 10px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag {
+      background: var(--tag); border: 1px solid var(--line); color: var(--muted);
+      font-size: 0.8rem; padding: 3px 10px; border-radius: 999px;
+    }
+    .badge {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    .badge.live { background: rgba(61,220,151,0.12); color: var(--ok); border: 1px solid rgba(61,220,151,0.35); }
+    .badge.proposed { background: rgba(255,200,87,0.12); color: var(--warn); border: 1px solid rgba(255,200,87,0.35); }
+
+    .subhead {
+      font-family: "Inter", sans-serif; font-size: 1.05rem; font-weight: 600;
+      color: var(--text); text-transform: uppercase; letter-spacing: 0.08em;
+      margin: 36px 0 6px; padding-left: 12px; border-left: 3px solid var(--accent);
+    }
+    .subhead:first-of-type { margin-top: 8px; }
+    .subhead small { display: block; text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--muted); font-size: 0.88rem; margin-top: 2px; }
+
+    /* First-page previews of project briefs */
+    .pdf-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px;
+      padding: 12px 0;
+    }
+    .pdf-card {
+      margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      overflow: hidden; cursor: zoom-in; position: relative;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      will-change: transform;
+    }
+    .pdf-card:hover, .pdf-card:focus-visible {
+      transform: scale(1.12);
+      z-index: 5;
+      border-color: var(--accent);
+      box-shadow: 0 22px 50px rgba(0,0,0,0.55);
+      outline: none;
+    }
+    .pdf-card img {
+      display: block; width: 100%; aspect-ratio: 210 / 297; object-fit: cover; object-position: top;
+      background: #fff; border-bottom: 1px solid var(--line);
+    }
+    .pdf-card figcaption { padding: 12px 14px; font-size: 0.9rem; line-height: 1.4; }
+    .pdf-card figcaption strong { display: block; color: var(--text); font-weight: 600; }
+    .pdf-card figcaption span { color: var(--muted); font-size: 0.82rem; }
+    .pdf-card .hint {
+      position: absolute; top: 10px; right: 10px; font-size: 0.72rem; font-weight: 600;
+      background: rgba(11,18,32,0.8); color: var(--accent-2); padding: 3px 9px; border-radius: 999px;
+      opacity: 0; transition: opacity .2s ease;
+    }
+    .pdf-card:hover .hint { opacity: 1; }
+
+    /* Lightbox for the enlarged first page */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(5,9,18,0.92); backdrop-filter: blur(6px);
+      display: none; align-items: center; justify-content: center; padding: 24px;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox figure { margin: 0; max-width: min(900px, 96vw); max-height: 94vh; text-align: center; }
+    .lightbox img {
+      display: block; max-width: 100%; max-height: 84vh; margin: 0 auto;
+      border-radius: 8px; background: #fff; box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+      animation: pop .22s ease;
+    }
+    .lightbox figcaption { color: var(--text); margin-top: 14px; font-size: 1rem; }
+    .lightbox figcaption span { color: var(--muted); margin-left: 8px; font-size: 0.9rem; }
+    .lightbox .close {
+      position: absolute; top: 18px; right: 22px; background: var(--card); border: 1px solid var(--line);
+      color: var(--text); font-size: 1.4rem; line-height: 1; width: 42px; height: 42px; border-radius: 999px; cursor: pointer;
+    }
+    .lightbox .close:hover { border-color: var(--accent); }
+    @keyframes pop { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    body.no-scroll { overflow: hidden; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .skill { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+    .skill h3 { font-size: 0.95rem; color: var(--accent-2); margin-bottom: 6px; font-family: "Inter", sans-serif; }
+    .skill p { margin: 0; color: var(--text); font-size: 0.95rem; }
+
+    /* Experience */
+    .timeline { display: grid; gap: 14px; }
+    .job { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; }
+    .job .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .job h3 { font-size: 1.05rem; font-family: "Inter", sans-serif; }
+    .job .org { color: var(--muted); font-size: 0.93rem; }
+    .job .when { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+    .job p { margin: 8px 0 0; color: var(--text); font-size: 0.95rem; }
+
+    /* Education */
+    .edu { margin-top: 10px; }
+    .edu ul { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 10px; }
+    .edu li {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 14px 18px; font-size: 0.97rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .edu li strong { color: var(--text); }
+    .edu li span { color: var(--accent-2); font-weight: 600; white-space: nowrap; }
+    .edu p { color: var(--muted); font-size: 0.93rem; margin: 0; }
+
+    /* Teaching course list */
+    .courses { list-style: none; padding: 0; margin: 6px 0 12px; display: grid; gap: 6px; font-size: 0.95rem; }
+    .courses li { padding-left: 18px; position: relative; }
+    .courses li::before { content: "›"; position: absolute; left: 4px; color: var(--accent); font-weight: 700; }
+
+    /* Research & publications */
+    .pub {
+      background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 14px; padding: 24px 26px;
+    }
+    .pub-type { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 8px; }
+    .pub h3 { font-size: 1.25rem; line-height: 1.35; margin-bottom: 8px; }
+    .pub h3 a { color: var(--text); }
+    .pub h3 a:hover { color: var(--accent-2); text-decoration: none; }
+    .pub-meta { color: var(--muted); font-size: 0.93rem; margin: 0 0 12px; }
+    .pub-meta strong { color: var(--text); }
+    .pub p { margin: 0 0 12px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 0.92rem; font-weight: 500; }
+    .profile-card { display: block; color: var(--text); transition: border-color .2s ease, transform .2s ease; }
+    .profile-card:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); }
+    .profile-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 10px; }
+    .profile-cta { color: var(--accent); font-weight: 600; font-size: 0.92rem; }
+
+    /* Contact */
+    .contact-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+    .contact-list a {
+      background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+      padding: 12px 18px; color: var(--text); font-weight: 500;
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .contact-list a:hover { border-color: var(--accent); text-decoration: none; }
+    .contact-list .ico { width: 20px; height: 20px; flex-shrink: 0; }
+    .contact-list .ico img, .contact-list .ico svg { width: 20px; height: 20px; object-fit: contain; fill: var(--accent-2); }
+
+    /* Featured open-source project */
+    .badge.build { background: rgba(90,169,255,0.12); color: var(--accent-2); border: 1px solid rgba(90,169,255,0.35); }
+    .feature {
+      background: linear-gradient(180deg, #16233f 0%, var(--card) 100%);
+      border: 1px solid var(--line); border-top: 3px solid var(--accent);
+      border-radius: 14px; padding: 28px; margin-bottom: 8px;
+    }
+    .feature h3 { font-size: 1.45rem; line-height: 1.3; margin-bottom: 6px; }
+    .feature .sub { color: var(--muted); font-size: 0.92rem; margin: 0 0 16px; }
+    .feature-top { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; }
+    .feature-top > * { min-width: 0; }
+    .feature-top p { margin: 0 0 12px; }
+    .flow { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 10px; margin: 0; }
+    .flow svg { display: block; width: 100%; height: auto; }
+    .flow figcaption { color: var(--muted); font-size: 0.82rem; line-height: 1.45; margin-top: 8px; }
+    .flow .node { fill: var(--card); stroke: var(--line); stroke-width: 1.2; }
+    .flow .node.human { stroke: var(--warn); stroke-width: 1.6; }
+    .flow .lbl { fill: var(--text); font: 500 11px "Inter", sans-serif; text-anchor: middle; }
+    .flow .note { fill: var(--muted); font: 400 9.5px "Inter", sans-serif; text-anchor: middle; }
+    .flow .edge { stroke: var(--accent); stroke-width: 1.4; fill: none; }
+    .flow .edge.loop { stroke-dasharray: 4 3; }
+    .flow .head { fill: var(--accent); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin: 22px 0 6px; }
+    .stat { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+    .stat b { display: block; font-size: 1.45rem; line-height: 1.2; color: var(--accent-2); font-family: "Source Serif 4", Georgia, serif; }
+    .stat span { color: var(--muted); font-size: 0.82rem; line-height: 1.35; display: block; }
+    .caps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin-top: 18px; }
+    .cap { border-left: 2px solid var(--line); padding-left: 14px; }
+    .cap h4 { margin: 0 0 4px; font-size: 0.95rem; color: var(--accent-2); font-weight: 600; }
+    .cap p { margin: 0; font-size: 0.93rem; color: var(--text); line-height: 1.6; }
+    .status-note {
+      margin: 20px 0 14px; padding: 12px 16px; border-radius: 10px; font-size: 0.92rem;
+      background: rgba(255,200,87,0.07); border: 1px solid rgba(255,200,87,0.28); color: var(--text);
+    }
+    .status-note strong { color: var(--warn); }
+    .feature-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+
+    footer { text-align: center; padding: 28px 20px 36px; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 48px; }
+      .hero .lead { margin-left: auto; margin-right: auto; }
+      .btns { justify-content: center; }
+      .photo-wrap { order: -1; }
+      .pdf-card:hover { transform: scale(1.04); }
+      .feature { padding: 22px 18px; }
+      .feature-top { grid-template-columns: 1fr; }
+      .hero > div { min-width: 0; }
+      .hero .meta span { display: block; white-space: normal; margin: 0 0 4px; }
+      .flow { overflow-x: auto; }
+      .flow svg { min-width: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <span class="brand">Abiodun Ilugbusi</span>
+      <nav>
+        <!-- <a href="#about">About</a> -->
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#proposals">Proposals</a>
+        <a href="#experience">Experience</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div>
+      <h1>Abiodun Adebowale Ilugbusi</h1>
+      <div class="role">Agentic AI &amp; RAG Systems · Transport Simulation &amp; Risk Modelling · Optimisation · Computer Science Educator</div>
+      <p class="lead">
+        I build quantitative decision-support software for safety-critical transport infrastructure:
+        a Monte Carlo risk-assessment system for road-tunnel fires and a train performance simulator
+        with an energy-optimal driving layer. On top of those models I design and ship generative-AI
+        systems — retrieval-augmented querying, multi-agent workflows, evaluation harnesses and
+        human approval gates — so that engineers stay in control of AI-assisted analysis. Alongside
+        industry work, I have spent twelve years teaching computer science and statistics in higher
+        education.
+      </p>
+      <div class="meta">
+        <span>📍 Incheon, South Korea</span>
+        <span>💼 10+ years in software &amp; AI</span>
+        <span>📚 12 years college teaching</span>
+        <span>🎓 B.Tech. Mathematics &amp; Computer Science, M.Tech. Computer Science</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View projects</a>
+        <!-- Upload the CV to the repo as assets/cv_ilugbusi.pdf -->
+        <a class="btn" href="assets/cv_ilugbusi.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="btn" href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <!-- Add your passport photo to the repo as assets/photo.jpeg (portrait, roughly 35×45 mm ratio) -->
+      <img class="photo" src="assets/photo.jpeg" alt="Portrait of Abiodun Adebowale Ilugbusi">
+      <small>Abiodun A. Ilugbusi</small>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- <section id="about">
+      <h2>About</h2>
+      <p>
+        I lead AI systems engineering at Bumchang Engineering in Seoul, where I own the technical direction
+        for AI-enabled decision-support platforms used in infrastructure risk assessment. My work sits at the
+        intersection of large language models and deterministic engineering computation: building RAG
+        pipelines with source grounding and hallucination detection, orchestrating LangChain/LangGraph agents
+        that keep engineers in control through explicit review gates, and running the Node.js, Python and
+        cloud infrastructure underneath.
+      </p>
+      <p>
+        Before this I built LLM-powered backend features at FunWorld, developed machine-learning and
+        data workflows at Ghent University Global Campus — where I also taught statistics as a teaching
+        assistant, running practical classes and designing and grading semester group projects — and led
+        a six-engineer team delivering a legal process-automation platform for a government SME funding
+        programme in Nigeria. I've been based in
+        South Korea since 2021 and have worked across Korean, European and African organisations.
+      </p>
+    </section> -->
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <h3>Modelling &amp; Simulation</h3>
+          <p>Simulation modelling (train dynamics, traffic flow, evacuation) · Monte Carlo methods · quantitative risk assessment · statistics &amp; regression</p>
+        </div>
+        <div class="skill">
+          <h3>Languages</h3>
+          <p>Python, R, C, C++, Java, TypeScript, JavaScript (Node.js), SQL, Golang</p>
+        </div>
+        <div class="skill">
+          <h3>Data &amp; ML</h3>
+          <p>PostgreSQL, MySQL, MongoDB · Apache Spark, Kafka, Airflow · ETL &amp; integration · PyTorch, TensorFlow, Scikit-learn · BentoML, ONNX Runtime</p>
+        </div>
+        <div class="skill">
+          <h3>AI Agents &amp; Orchestration</h3>
+          <p>LangChain, LangGraph, LangSmith, CrewAI, AutoGen, Copilot Studio · multi-agent workflows, tool use, routing and human-in-the-loop design · RAG with pgvector, Chroma and FAISS · model-agnostic LLM integration (GPT, Claude, Gemini, Llama, Mistral) · prompt &amp; context engineering</p>
+        </div>
+        <div class="skill">
+          <h3>Evaluation &amp; AI Safety</h3>
+          <p>Evaluation harnesses and regression gates · factual accuracy, source grounding &amp; hallucination detection · prompt robustness and red-team testing · cost, feasibility &amp; reliability assessment · access-control, privacy &amp; compliance guardrails</p>
+        </div>
+        <div class="skill">
+          <h3>Backend &amp; APIs</h3>
+          <p>Node.js, Nest.js, Express, FastAPI, Django · React / Next.js · REST, GraphQL, OData · microservices</p>
+        </div>
+        <div class="skill">
+          <h3>Cloud &amp; DevOps</h3>
+          <p>AWS, Azure, Docker, Kubernetes · CI/CD (Jenkins, GitLab CI) · Git</p>
+        </div>
+        <div class="skill">
+          <h3>Observability, Testing &amp; Security</h3>
+          <p>Grafana, Prometheus, ELK, OpenTelemetry · Jest, Playwright, Supertest, pytest · access control, audit trails, data-quality validation · CompTIA Security+</p>
+        </div>
+        <div class="skill">
+          <h3>Leadership &amp; Delivery</h3>
+          <p>Design &amp; code reviews · mentoring and hiring · stakeholder workshops that turn ambiguous requirements into buildable designs · Agile / Scrum</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="section-intro">Selected work across open-source AI engineering, industry and academia.</p>
+
+      <h3 class="subhead" id="agentops">Open-Source AI Engineering <small>A public, reproducible build of the agentic patterns I use in production work</small></h3>
+      <article class="feature">
+        <span class="badge build">Open-source build · in progress</span>
+        <h3>AgentOps Intelligence Platform</h3>
+        <p class="sub">Python · LangGraph · Ollama · FastAPI · PostgreSQL · Valkey/Redis · Prometheus · Grafana · OpenTelemetry · Docker</p>
+
+        <div class="feature-top">
+          <div>
+            <p>
+              A multi-agent system that takes a business request — <em>“analyse the quarterly sales data
+              and prepare a management report”</em> — and completes it with six specialised agents instead
+              of one large prompt. A supervisor plans the work, a research agent gathers context, an
+              analyst computes figures with typed tools, a critic verifies them, a report agent writes
+              the document, and an approval gate holds the release until a person signs it off.
+            </p>
+            <p>
+              The project is as much about the engineering around the agents as the agents themselves:
+              the platform measures its own latency, token use and cost, blocks unsafe inputs and tool
+              calls, keeps an audit trail, and reruns a labelled evaluation set whenever a prompt, model
+              or tool changes. It runs entirely on open-source software and local open-weight models —
+              no paid API.
+            </p>
+          </div>
+
+          <figure class="flow">
+            <svg viewBox="0 0 520 232" role="img" aria-label="Workflow: guard, supervisor, critic, report, human approval, finalize; the supervisor delegates to research and analyst agents, and the critic can send work back to the analyst.">
+              <defs>
+                <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path class="head" d="M0 0 8 4 0 8z"/>
+                </marker>
+              </defs>
+              <!-- main path -->
+              <path class="edge" marker-end="url(#ah)" d="M80 51H94"/>
+              <path class="edge" marker-end="url(#ah)" d="M166 51H180"/>
+              <path class="edge" marker-end="url(#ah)" d="M252 51H266"/>
+              <path class="edge" marker-end="url(#ah)" d="M338 51H352"/>
+              <path class="edge" marker-end="url(#ah)" d="M424 51H438"/>
+              <!-- supervisor <-> workers -->
+              <path class="edge" marker-start="url(#ah)" marker-end="url(#ah)" d="M116 70 66 150"/>
+              <path class="edge" marker-start="url(#ah)" marker-end="url(#ah)" d="M138 70 142 150"/>
+              <!-- critic -> analyst revision loop -->
+              <path class="edge loop" marker-end="url(#ah)" d="M217 70V167H182"/>
+              <text class="note" x="239" y="124">revise</text>
+
+              <rect class="node" x="10" y="34" width="70" height="34" rx="6"/><text class="lbl" x="45" y="55">guard</text>
+              <rect class="node" x="96" y="34" width="70" height="34" rx="6"/><text class="lbl" x="131" y="55">supervisor</text>
+              <rect class="node" x="182" y="34" width="70" height="34" rx="6"/><text class="lbl" x="217" y="55">critic</text>
+              <rect class="node" x="268" y="34" width="70" height="34" rx="6"/><text class="lbl" x="303" y="55">report</text>
+              <rect class="node human" x="354" y="34" width="70" height="34" rx="6"/><text class="lbl" x="389" y="55">approval</text>
+              <rect class="node" x="440" y="34" width="70" height="34" rx="6"/><text class="lbl" x="475" y="55">finalize</text>
+              <rect class="node" x="22" y="152" width="70" height="34" rx="6"/><text class="lbl" x="57" y="173">research</text>
+              <rect class="node" x="108" y="152" width="70" height="34" rx="6"/><text class="lbl" x="143" y="173">analyst</text>
+
+              <text class="note" x="45" y="24">input screen</text>
+              <text class="note" x="131" y="24">plan &amp; route</text>
+              <text class="note" x="217" y="24">verify</text>
+              <text class="note" x="389" y="24">human sign-off</text>
+              <text class="note" x="57" y="204">retrieval</text>
+              <text class="note" x="143" y="204">typed tools</text>
+              <text class="note" x="389" y="86">pauses here;</text>
+              <text class="note" x="389" y="98">state saved</text>
+            </svg>
+            <figcaption>
+              The workflow is an explicit LangGraph state machine: routing is code, not a prompt. The
+              dashed edge is a bounded revision loop; the highlighted node waits for a human decision.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>6</b><span>specialised agents in one checkpointed graph</span></div>
+          <div class="stat"><b>6</b><span>typed tools with per-agent permissions</span></div>
+          <div class="stat"><b>62</b><span>automated tests: unit, integration, security, regression</span></div>
+          <div class="stat"><b>18</b><span>red-team attacks across input, retrieval and tool layers</span></div>
+          <div class="stat"><b>11</b><span>services in the Docker Compose stack</span></div>
+        </div>
+
+        <div class="caps">
+          <div class="cap">
+            <h4>Orchestration &amp; tool use</h4>
+            <p>Supervisor-planned routing, a bounded ReAct loop in the analyst, and Pydantic-typed function calling: a safe calculator, read-only SQL, dataset analysis, retrieval, report rendering and an external API.</p>
+          </div>
+          <div class="cap">
+            <h4>Human-in-the-loop that survives restarts</h4>
+            <p>The graph is checkpointed in PostgreSQL, so a task paused for approval in one process can be approved and completed in another. Every decision is written to an append-only audit trail.</p>
+          </div>
+          <div class="cap">
+            <h4>Hallucination detection</h4>
+            <p>Every figure in an analysis must be traceable to tool evidence; a judge model from a different model family then reviews the reasoning. Failures are sent back for revision or escalated to a person.</p>
+          </div>
+          <div class="cap">
+            <h4>Evaluation &amp; regression gate</h4>
+            <p>A labelled task set scores routing, tool selection, grounding, retrieval, safety, latency and cost. The delivery pipeline refuses a change that makes quality or safety worse than the accepted baseline.</p>
+          </div>
+          <div class="cap">
+            <h4>Responsible AI by construction</h4>
+            <p>Prompt-injection screening on requests and retrieved documents, PII redaction, SQL parsed and restricted to a read-only role, and agents that can reach only their own tools.</p>
+          </div>
+          <div class="cap">
+            <h4>GenAIOps</h4>
+            <p>OpenTelemetry traces per agent, model and tool call; Prometheus metrics and a Grafana dashboard for latency, tokens, estimated cost, tool failures and approval rates; model routing by task complexity.</p>
+          </div>
+        </div>
+
+        <p class="status-note">
+          <strong>Status.</strong> The workflow, tools, guardrails and evaluation harness are verified by the
+          automated test suite using a scripted stand-in for the language model, and the pause-and-resume
+          path has been run against PostgreSQL and Redis. Benchmarks with real local models (Qwen2.5 and
+          Mistral via Ollama) are the next milestone and will be published here when measured.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Multi-agent orchestration</span><span class="tag">Function calling</span>
+          <span class="tag">Agent memory</span><span class="tag">Human-in-the-loop</span>
+          <span class="tag">LLM evaluation</span><span class="tag">Red-teaming</span>
+          <span class="tag">Observability</span><span class="tag">CI/CD</span><span class="tag">Cost optimisation</span>
+        </div>
+
+        <div class="feature-links">
+          <!-- Upload the guide to the repo as docs/AgentOps_Intelligence_Platform_Complete_Guide.pdf -->
+          <a class="btn primary" href="docs/AgentOps_Intelligence_Platform_Complete_Guide.pdf" target="_blank" rel="noopener">Technical design guide (PDF)</a>
+          <!-- When the code is pushed, set the repository URL below and uncomment the line -->
+          <!-- <a class="btn" href="https://github.com/abiodun-devs/agentops-intelligence" target="_blank" rel="noopener">Source code on GitHub</a> -->
+        </div>
+      </article>
+
+      <h3 class="subhead">Professional</h3>
+      <p class="section-intro">Safety-critical simulation tools and applied AI systems.</p>
+      <div class="grid two">
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System: Clean Energy Vehicle Integration</h3>
+          <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
+          <p>
+            An application for quantitative risk assessment of road-tunnel fires. From a tunnel's geometry,
+            traffic and ventilation data, it generates fire-simulation inputs, runs fire and evacuation scenarios 
+            across fire positions and conditions, and computes evacuee exposure (FED), fatalities, societal-risk 
+            F–N curves and risk indices against acceptance criteria.
+          </p>
+          <p>
+            It includes a lane-level traffic model — multinomial-logit lane choice, a Greenshields
+            fundamental diagram and method-of-successive-averages equilibrium — and its traffic and risk
+            calculations are validated against reference outputs of the legacy tool it replaces.
+          </p>
+            Major developments over the legacy system:
+            <ul class="courses">
+            <li>EV fire statistics: the legacy system applied one fire rate per vehicle class; EVs are now a distinct fleet share with a dedicated fire rate from Korean data.</li>
+            <li>Event-tree split: every fire scenario is partitioned into ICE and EV branches.</li>
+            <li>HF source term: FDS input generation adds battery-derived hydrogen fluoride release.</li>
+            <li>Dual-consequence evacuation: one simulation reports FED-only and FED+HF fatalities.</li>
+            <li>Backward compatibility: zero EV share reproduces legacy results.</li>
+            <li>An AI layer lets engineers query standards and results in natural language, with every
+            recommendation passing through a human review gate.</li>  
+          </ul>
+          
+          <div class="tags">
+            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stochastic modelling</span>
+            <span class="tag">Traffic equilibrium</span><span class="tag">Validation</span>
+            <span class="tag">RAG</span><span class="tag">Human-in-the-loop</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Train Performance Simulation (TPS) System</h3>
+          <!-- TODO: name the optimisation method or library the driving-strategy layer uses -->
+          <p class="sub">Python · Rail operations modelling</p>
+          <p>
+            A train-performance simulator that models a train's movement along a route from track geometry,
+            gradients, speed limits, traction and braking characteristics. It computes run times, speed profiles
+            and energy use, and supports headway and operational planning studies for urban and mainline rail.
+          </p>
+          <p>
+            A built-in optimisation layer searches driving strategies — acceleration, cruising, coasting and braking
+            phases — to find speed profiles that minimise energy consumption within a target run time, letting operators 
+            trade journey time against traction energy and quantify the savings of eco-driving and timetable adjustments.
+          </p>
+          <div class="tags">
+            <span class="tag">Simulation</span><span class="tag">Rail planning</span><span class="tag">Energy optimization</span>
+            <span class="tag">Run-time optimization</span><span class="tag">Data visualisation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>AI Decision-Support Platform for Infrastructure Risk</h3>
+          <p class="sub">LangChain · LangGraph · RAG · Node.js / TypeScript</p>
+          <p>
+            A model-agnostic RAG and agent platform that lets engineers query technical standards,
+            reports and simulation results in natural language. Multi-step agent workflows combine
+            deterministic engineering outputs with LLM reasoning, with validation layers and human
+            approval gates before any recommendation is accepted.
+          </p>
+          <div class="tags">
+            <span class="tag">RAG</span><span class="tag">Agentic workflows</span>
+            <span class="tag">Human-in-the-loop</span><span class="tag">Evaluation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Delivered</span>
+          <h3>Legal Process Automation Framework</h3>
+          <p class="sub">Government SME funding programme · Nigeria</p>
+          <p>
+            A platform that digitised the legal, compliance and approval chain governing phased fund
+            disbursement — rule-based funding gates, automated document generation, role-based approvals
+            and end-to-end audit trails — replacing a manual, document-heavy process.
+          </p>
+          <div class="tags">
+            <span class="tag">Workflow automation</span><span class="tag">APIs</span>
+            <span class="tag">Governance</span>
+          </div>
+        </div>
+
+      </div>
+      <p style="margin-top:18px;"><a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">Explore my repositories →</a></p>
+
+      <h3 class="subhead" id="academia">Academia</h3>
+      <p class="section-intro">
+        Semester group projects I designed for undergraduate statistics at Ghent University Global Campus
+        (2022–2024). Hover to enlarge a card, or click to view the first page in full.
+      </p>
+      <!--
+        Each preview image is the first page of the brief, exported as PNG.
+        Put the images in the repo at  previews/<file>.png  (A4 portrait, ~800px wide is plenty).
+      -->
+      <div class="pdf-grid">
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="previews/Exploratory data analysis and statistical testing.png" alt="First page: Exploratory data analysis and statistical testing, 2022–2023">
+          <figcaption><strong>Exploratory data analysis and statistical testing</strong><span>2022–2023</span></figcaption>
+        </figure>
+
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="previews/Linear regression.png" alt="First page: Linear regression, 2023–2024">
+          <figcaption><strong>Linear regression</strong><span>2023–2024</span></figcaption>
+        </figure>
+
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="previews/Non-linear modeling.png" alt="First page: Non-linear modeling, 2023–2024">
+          <figcaption><strong>Non-linear modeling</strong><span>2023–2024</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="proposals">
+      <h2>Proposals &amp; Roadmap</h2>
+      <p class="section-intro">Extensions I have scoped and proposed but not yet implemented. These describe the direction the work is heading.</p>
+      <div class="grid two">
+
+        <div class="card">
+          <span class="badge proposed">Research direction (concept)</span>
+          <h3>From Single-Tunnel Risk to Network Resilience</h3>
+          <p>
+            A tunnel or rail section is one link in a network. This direction moves from assessing the
+            risk of a single asset to choosing investments and response plans for a whole multimodal
+            network: optimisation under uncertainty over disruption scenarios, with simulation models
+            such as the QRA and TPS systems supplying event frequencies, running times and energy use.
+          </p>
+          <div class="tags"><span class="tag">Optimisation under uncertainty</span><span class="tag">Resilient transport</span><span class="tag">Simulation-based optimisation</span></div>
+        </div>
+
+        
+        <div class="card">
+          <span class="badge proposed">Concept</span>
+          <h3>QRA Extension for Clean-Energy Vehicles</h3>
+          <p>
+            Extend the tunnel QRA system beyond conventional fuels to cover electric and hydrogen
+            vehicles — battery thermal-runaway and hydrogen-release fire scenarios, revised heat-release
+            and toxic-gas profiles, and updated accident-frequency tables as road freight shifts to battery-electric and hydrogen trucks.
+          </p>
+          <div class="tags"><span class="tag">EV / H₂ fire scenarios</span><span class="tag">Risk modelling</span></div>
+        </div>
+
+        
+
+        <div class="card">
+          <span class="badge proposed">Concept</span>
+          <h3>AI-Assisted QRA Review &amp; Reporting</h3>
+          <p>
+            Integrate the RAG/agent platform with the QRA engine so that simulation results are
+            automatically cross-checked against tunnel safety standards, anomalies are flagged, and
+            draft assessment reports are generated for engineer review and sign-off.
+          </p>
+          <div class="tags"><span class="tag">Agentic workflow</span><span class="tag">Human approval gates</span></div>
+        </div>
+
+        <!-- <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Multilingual, User-Centric Interface</h3>
+          <p>
+            Redesign the QRA and TPS interfaces with full Korean/English language support, guided
+            scenario setup, and clearer result dashboards so that non-specialist engineers can run and
+            interpret assessments with less training.
+          </p>
+          <div class="tags"><span class="tag">UX</span><span class="tag">i18n</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>National Government Identity Cybersecurity and Digital Trust Programme</h3>
+          <p>
+            As Nigeria's 136 million national identification numbers (NINs), biometric passports and digital driver's licenses 
+            become the gateway to every public service, a breach anywhere in the ecosystem follows a citizen everywhere. 
+            NGIS-DTP proposes a national trust framework in which agencies verify rather than replicate: a trust broker returns 
+            purpose-specific assertions from NIMC, NIS, FRSC, banks and telecom operators, modelled on South Korea's PASS and certain 
+            verification, under a government-wide Zero Trust and privacy-by-design architecture. 
+          </p>
+          <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">Zero-trust authentication</span><span class="tag">Unified security</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Lagos Smart Mobility Transformation Programme</h3>
+          <p>
+            Lagos does not need another transport system; it needs the digital operating layer that makes the 
+            one it has predictable, cashless and accountable. L-STOMP applies the architecture of Seoul's TOPIS 
+            and integrated transport card to Lagos BRT, buses, rail and ferries, turning every journey into an 
+            observable, schedulable, payable and auditable event, from real-time arrival information at the stop
+            to performance-based operator settlement that traces every naira from passenger to operator. 
+          </p>
+          <div class="tags"><span class="tag">Convenient payment</span><span class="tag">Transparency</span><span class="tag">Accountability</span></div>
+        </div> -->
+        
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="section-intro">
+        Sixteen years across industry and academia — building simulation, data and AI systems while
+        teaching and researching at tertiary level.
+      </p>
+
+      <h3 class="subhead">Industry Experience <small>Software engineering, AI systems and data · 2010 – present</small></h3>
+      <div class="timeline">
+        <div class="job">
+          <div class="head">
+            <div><h3>Senior System Developer — Team Lead, AI Systems</h3><div class="org">Bumchang Engineering Co. Ltd · Seoul, South Korea</div></div>
+            <div class="when">Nov 2025 – Present</div>
+          </div>
+          <p>Technical lead for simulation and AI-enabled decision-support platforms in a safety-critical infrastructure-risk domain, including the TPS and QRA systems. Own the agentic AI lifecycle from prototype to production: LangGraph/LangChain agent workflows that reason over deterministic simulation outputs, RAG pipelines, a model-agnostic LLM layer, evaluation harnesses for grounding and hallucination detection, and human approval gates. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Full-Stack / Platform Engineer — Team Lead (AI Systems)</h3><div class="org">FunWorld Company · Incheon, South Korea</div></div>
+            <div class="when">Sep 2024 – Oct 2025</div>
+          </div>
+          <p>Shipped LLM-powered features in production Node.js/TypeScript services — prompt templates, error handling, rate limiting and usage monitoring — piloted agent workflows for internal reporting, and built data-integration pipelines that improved reporting workflows by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Software Developer / Database Administrator</h3><div class="org">Avenue Impact Consulting · Port Harcourt, Nigeria</div></div>
+            <div class="when">Jan 2015 – Aug 2021</div>
+          </div>
+          <p>Led a six-engineer team delivering a legal process-automation platform for a government SME funding programme in a client-facing consulting setting; administered databases handling over a million transactions a day and cut query execution time by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Data Analyst</h3><div class="org">Saev-Mesa Technologies · Lagos, Nigeria</div></div>
+            <div class="when">Mar 2010 – Dec 2014</div>
+          </div>
+          <p>Automated KPI reporting and dashboards with Tableau, Power BI and Excel, halving analysis time and supporting initiatives behind 20% revenue growth.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Academic Experience <small>Research, lecturing and teaching assistance · 2012 – 2024</small></h3>
+      <div class="timeline">
+        <div class="job">
+          <div class="head">
+            <div><h3>Research Engineer / AI Data Analyst &amp; Teaching Assistant (Statistics)</h3><div class="org">Ghent University Global Campus · Incheon, South Korea</div></div>
+            <div class="when">Oct 2021 – Aug 2024</div>
+          </div>
+          <p>Built machine-learning and computational data workflows for international research teams; optimised processing algorithms by 40%. In parallel, served as teaching assistant for undergraduate statistics — leading practical sessions, designing semester-long group projects on real datasets, and grading student work.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Lecturer, Computer Science</h3><div class="org">Federal Polytechnic Idah · Kogi State, Nigeria</div></div>
+            <div class="when">Mar 2012 – Sep 2021</div>
+          </div>
+          <p>Taught programming (C, C++, Java, Python) and computer-applications courses (Microsoft Excel, databases) to National Diploma and Higher National Diploma students — delivering lectures and laboratory sessions, setting and marking examinations, and supervising student projects over nine academic years.</p>
+        </div>
+      </div>
+      <div class="edu">
+        <h3 class="subhead">Education</h3>
+        <ul>
+          <li><strong>M.Tech. Computer Science</strong> — Federal University of Technology, Akure <span>2017</span></li>
+          <li><strong>B.Tech. Mathematics &amp; Computer Science</strong> (five-year programme) — Federal University of Technology, Minna <span>2008</span></li>
+        </ul>
+        <p>B.Tech. coursework included Systems Operations Research, Optimization Theory, Distribution Theory, Real Analysis, Functional Analysis, and Lebesgue Measure and Integration.</p>
+        <h3 class="subhead">Certifications</h3>
+        <p>IBM: Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI · Agentic AI with LangChain &amp; LangGraph · Building AI Agents and Agentic Workflows · Fundamentals of Building AI Agents · Vector Databases for RAG (2026) · Vanderbilt University: Prompt Engineering for ChatGPT (2026) · IO4PM™ Program Manager / Project Manager / Project Requirement Analyst (2023) · CompTIA Security+</p>
+        <h3 class="subhead">Languages</h3>
+        <p>English (professional working proficiency) · Korean (basic). Based in South Korea since 2021, working with stakeholders across Korea, Europe and Africa.</p>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <p class="section-intro">
+        Twelve years of tertiary-level teaching across two institutions — nine as a computer science
+        lecturer in Nigeria and three as a statistics teaching assistant in South Korea — covering
+        programming, computer applications, and applied statistics.
+      </p>
+
+      <h3 class="subhead">Federal Polytechnic Idah <small>Lecturer, Computer Science · Mar 2012 – Sep 2021</small></h3>
+      <div class="grid two">
+        <div class="card">
+          <h3>Programming Courses</h3>
+          <p>
+            Taught the core programming sequence from first principles to applied projects, taking
+            students from syntax and control flow through data structures, object-oriented design and
+            working software.
+          </p>
+          <ul class="courses">
+            <li>Programming in C</li>
+            <li>Programming in C++</li>
+            <li>Programming in Java</li>
+            <li>Programming in Python</li>
+          </ul>
+          <div class="tags"><span class="tag">C / C++</span><span class="tag">Java</span><span class="tag">Python</span><span class="tag">Lab sessions</span></div>
+        </div>
+        <div class="card">
+          <h3>Computer Applications Courses</h3>
+          <p>
+            Delivered practical computing courses for students across disciplines, focused on using
+            spreadsheets and databases to organise, analyse and report real data.
+          </p>
+          <ul class="courses">
+            <li>Microsoft Excel — formulas, functions, data analysis and reporting</li>
+            <li>Databases — relational design, SQL, and database applications</li>
+          </ul>
+          <div class="tags"><span class="tag">Excel</span><span class="tag">SQL</span><span class="tag">Database design</span></div>
+        </div>
+      </div>
+
+      <h3 class="subhead">Ghent University Global Campus <small>Teaching Assistant, Statistics · Oct 2021 – Aug 2024</small></h3>
+      <div class="grid two">
+        <div class="card">
+          <h3>Practical Classes</h3>
+          <p>
+            Led hands-on statistics sessions in which students applied the week's theory to real data —
+            exploratory analysis, hypothesis testing, regression and model diagnostics — using R and
+            Python, with emphasis on interpreting results rather than just producing them.
+          </p>
+          <div class="tags"><span class="tag">R</span><span class="tag">Python</span><span class="tag">Applied statistics</span></div>
+        </div>
+        <div class="card">
+          <h3>Semester Group Projects</h3>
+          <p>
+            Designed the semester-long group projects for each cohort (2022–2024), including the
+            datasets, research questions, analysis briefs and grading rubrics. Projects progressed from
+            descriptive and inferential analysis through model building and parameter estimation to
+            non-linear modelling.
+          </p>
+          <p class="sub">Example: a liver-function dataset of 591 volunteers used to relate blood-chemistry readings to daily alcohol consumption across genders. <a href="#academia">See the project briefs →</a></p>
+          <div class="tags"><span class="tag">Curriculum design</span><span class="tag">Model building</span><span class="tag">Non-linear modelling</span></div>
+        </div>
+        <div class="card">
+          <h3>Assessment &amp; Feedback</h3>
+          <p>
+            Graded practical assignments and project reports against structured rubrics, giving written
+            feedback on statistical reasoning, analysis choices and presentation of results, and
+            supporting students during office hours.
+          </p>
+          <div class="tags"><span class="tag">Grading</span><span class="tag">Mentoring</span></div>
+        </div>
+        <div class="card">
+          <h3>Academic Interests</h3>
+          <p>
+            Open to teaching, supervision and collaborative research in computer science, applied
+            statistics, and optimisation and decision support for transport and safety-critical
+            systems — bringing industry experience into the classroom.
+          </p>
+          <div class="tags"><span class="tag">Teaching</span><span class="tag">Supervision</span><span class="tag">Collaboration</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research &amp; Publications</h2>
+      <p class="section-intro">
+        My research interests are optimisation under uncertainty, resilient transport networks,
+        simulation-based optimisation with machine-learning surrogates, and quantitative risk assessment.
+        My published work to date is in biometric authentication.
+      </p>
+
+      <div class="pub">
+        <div class="pub-type">Conference paper · Master's research</div>
+        <h3><a href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">Development of a Multi-Instance Fingerprint Based Authentication System</a></h3>
+        <p class="pub-meta">
+          <strong>A. A. Ilugbusi</strong> · 2017 International Conference on Computing, Networking and Informatics (ICCNI) ·
+          Lagos, Nigeria · IEEE, October 2017
+        </p>
+        <p>
+          Design and implementation of an authentication system that fuses multiple fingerprint instances
+          from the same user to improve matching accuracy and robustness over single-print verification.
+          Developed from my M.Tech. research in Computer Science.
+        </p>
+        <div class="pub-links">
+          <a href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">IEEE Xplore ↗</a>
+          <a href="https://doi.org/10.1109/ICCNI.2017.8123780" target="_blank" rel="noopener">DOI: 10.1109/ICCNI.2017.8123780</a>
+        </div>
+      </div>
+
+      <div class="grid two" style="margin-top:18px;">
+        <a class="card profile-card" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">
+          <h3>Google Scholar</h3>
+          <p>Full publication list, citations and co-authors.</p>
+          <span class="profile-cta">View profile ↗</span>
+        </a>
+        <a class="card profile-card" href="https://ieeexplore.ieee.org/document/8123780" target="_blank" rel="noopener">
+          <h3>IEEE Xplore</h3>
+          <p>Published conference proceedings in the IEEE digital library.</p>
+          <span class="profile-cta">View paper ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="section-intro">Open to conversations about generative-AI and agentic systems engineering, transport modelling and risk, optimisation and decision support, and research collaboration.</p>
+      <div class="contact-list">
+        <a href="mailto:aailugbusi@gmail.com">
+          <span class="ico">
+            <img src="assets/email.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM4.8 7l7.2 4.8L19.2 7H4.8z"/></svg>
+          </span>
+          aailugbusi@gmail.com
+        </a>
+        <a href="tel:+821076029222">
+          <span class="ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1l-2.2 2.2z"/></svg>
+          </span>
+          +82 10 7602 9222
+        </a>
+        <a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">
+          <span class="ico">
+            <img src="assets/github.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M7 3a3 3 0 0 1 1 5.83V15.2a3 3 0 1 1-2 0V8.83A3 3 0 0 1 7 3zm10 0a3 3 0 0 1 1 5.83V10a4 4 0 0 1-4 4h-2.2a3 3 0 1 0 0 2H14a6 6 0 0 0 6-6V8.83A3 3 0 0 1 17 3zM7 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM7 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          </span>
+          GitHub · abiodun-devs
+        </a>
+        <a href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">
+          <span class="ico">
+            <img src="assets/linkedin.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 2v2h6V5H9zM4 9v3h16V9H4zm0 5v5h16v-5h-5v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1H4z"/></svg>
+          </span>
+          LinkedIn · abiodun-ilugbusi
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">
+          <span class="ico">
+            <img src="assets/scholar.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 15.2-6-3.3V11l6 3.3 6-3.3v3.9l-6 3.3z"/></svg>
+          </span>
+          Google Scholar
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Abiodun Adebowale Ilugbusi 
+  </footer>
+
+  <!-- Enlarged first-page viewer -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged project brief">
+    <button class="close" type="button" aria-label="Close">&times;</button>
+    <figure>
+      <img id="lightbox-img" src="" alt="">
+      <figcaption><strong id="lightbox-title"></strong><span id="lightbox-year"></span></figcaption>
+    </figure>
+  </div>
+
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox');
+      var img = document.getElementById('lightbox-img');
+      var title = document.getElementById('lightbox-title');
+      var year = document.getElementById('lightbox-year');
+
+      function open(card) {
+        var src = card.querySelector('img');
+        img.src = src.src;
+        img.alt = src.alt;
+        title.textContent = card.querySelector('figcaption strong').textContent;
+        year.textContent = card.querySelector('figcaption span').textContent;
+        box.classList.add('open');
+        document.body.classList.add('no-scroll');
+      }
+      function close() {
+        box.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+        img.src = '';
+      }
+
+      document.querySelectorAll('.pdf-card').forEach(function (card) {
+        card.addEventListener('click', function () { open(card); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+        });
+      });
+      box.addEventListener('click', function (e) {
+        if (e.target === box || e.target.classList.contains('close')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && box.classList.contains('open')) close();
+      });
+    })();
+  </script>
+
+</body>
+</html>
