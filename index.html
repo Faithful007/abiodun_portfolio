@@ -47,7 +47,7 @@
       display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
     }
     .brand { font-weight: 700; font-size: 1.05rem; color: var(--text); }
-    .topbar nav a { color: var(--muted); margin-left: 18px; font-weight: 500; font-size: 0.95rem; }
+    .topbar nav a { color: var(--muted); margin-left: 14px; font-weight: 500; font-size: 0.9rem; }
     .topbar nav a:hover { color: var(--text); text-decoration: none; }
 
     /* ---------- Hero ---------- */
@@ -330,9 +330,10 @@
     <div class="inner">
       <span class="brand">Abiodun Ilugbusi</span>
       <nav>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
+        <a href="#academic">Academic</a>
         <a href="#teaching">Teaching</a>
         <a href="#teaching-statement">Teaching Statement</a>
         <a href="#research">Research</a>
@@ -355,17 +356,19 @@
         and energy-efficient railway operations.
       </p>
       <p class="lead">
-        With twelve years of tertiary-level teaching and more than ten years in industry, I bring
+        With more than ten years in industry and twelve years of tertiary-level teaching, I bring
         together practical software engineering, mathematical modelling, research and education.
       </p>
       <div class="meta">
+        <span>Team Lead, AI Systems · Bumchang Engineering</span>
         <span>Incheon, South Korea</span>
         <span>M.Tech. Computer Science</span>
         <span>B.Tech. Mathematics &amp; Computer Science</span>
         <span>IEEE-published research</span>
       </div>
       <div class="btns">
-        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn primary" href="#experience">Industry experience</a>
+        <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="assets/doc/CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
         <a class="btn" href="#teaching-statement">Teaching statement</a>
       </div>
@@ -383,11 +386,11 @@
 
   <!-- Who I am, what I specialise in, what is distinctive -->
   <div class="pillars">
-    <a class="pillar" href="#agentops">
-      <span class="k">AI systems</span>
+    <a class="pillar" href="#experience">
+      <span class="k">AI systems in industry</span>
       <h2>Agentic AI that engineers can trust</h2>
-      <p>Multi-agent workflows, RAG, evaluation harnesses and human approval gates, taken from prototype to production.</p>
-      <span class="go">See the AI work →</span>
+      <p>Team lead for production AI platforms: multi-agent workflows, RAG, evaluation harnesses and human approval gates.</p>
+      <span class="go">See the industry experience →</span>
     </a>
     <a class="pillar" href="#professional">
       <span class="k">Modelling &amp; optimisation</span>
@@ -425,10 +428,140 @@
       </p>
     </section> -->
 
+    <section id="experience">
+      <h2>Industry Experience</h2>
+      <p class="section-intro">
+        Software engineering, AI systems and data since 2010 — building simulation, data and AI
+        systems for engineering firms, product companies and government clients.
+      </p>
+
+      <div class="timeline">
+        <div class="job">
+          <div class="head">
+            <div><h3>Senior System Developer — Team Lead, AI Systems</h3><div class="org">Bumchang Engineering Co. Ltd · Seoul, South Korea</div></div>
+            <div class="when">Nov 2025 – Present</div>
+          </div>
+          <p>Technical lead for simulation and AI-enabled decision-support platforms in a safety-critical infrastructure-risk domain, including the TPS and QRA systems. Own the agentic AI lifecycle from prototype to production: LangGraph/LangChain agent workflows that reason over deterministic simulation outputs, RAG pipelines, a model-agnostic LLM layer, evaluation harnesses for grounding and hallucination detection, and human approval gates. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Full-Stack / Platform Engineer — Team Lead (AI Systems)</h3><div class="org">FunWorld Company · Incheon, South Korea</div></div>
+            <div class="when">Sep 2024 – Oct 2025</div>
+          </div>
+          <p>Shipped LLM-powered features in production Node.js/TypeScript services — prompt templates, error handling, rate limiting and usage monitoring — piloted agent workflows for internal reporting, and built data-integration pipelines that improved reporting workflows by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Software Developer / Database Administrator</h3><div class="org">Avenue Impact Consulting · Port Harcourt, Nigeria</div></div>
+            <div class="when">Jan 2015 – Aug 2021</div>
+          </div>
+          <p>Led a six-engineer team delivering a legal process-automation platform for a government SME funding programme in a client-facing consulting setting; administered databases handling over a million transactions a day and cut query execution time by 40%.</p>
+        </div>
+        <div class="job">
+          <div class="head">
+            <div><h3>Data Analyst</h3><div class="org">Saev-Mesa Technologies · Lagos, Nigeria</div></div>
+            <div class="when">Mar 2010 – Dec 2014</div>
+          </div>
+          <p>Automated KPI reporting and dashboards with Tableau, Power BI and Excel, halving analysis time and supporting initiatives behind 20% revenue growth.</p>
+        </div>
+      </div>
+
+    </section>
+
     <section id="projects">
       <h2>Projects</h2>
-      <p class="section-intro">Selected work across open-source AI engineering, industry and academia.</p>
+      <p class="section-intro">Selected work from industry and open-source AI engineering.</p>
 
+      <h3 class="subhead" id="professional">Professional</h3>
+      <p class="section-intro">Production systems delivered in industry: safety-critical simulation tools and applied AI platforms.</p>
+      <div class="grid two">
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System: Clean Energy Vehicle Integration</h3>
+          <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
+          <p>
+            An application for quantitative risk assessment of road-tunnel fires. From a tunnel's geometry,
+            traffic and ventilation data, it generates fire-simulation inputs, runs fire and evacuation scenarios 
+            across fire positions and conditions, and computes evacuee exposure (FED), fatalities, societal-risk 
+            F–N curves and risk indices against acceptance criteria.
+          </p>
+          <p>
+            It includes a lane-level traffic model — multinomial-logit lane choice, a Greenshields
+            fundamental diagram and method-of-successive-averages equilibrium — and its traffic and risk
+            calculations are validated against reference outputs of the legacy tool it replaces.
+          </p>
+            Major developments over the legacy system:
+            <ul class="courses">
+            <li>EV fire statistics: the legacy system applied one fire rate per vehicle class; EVs are now a distinct fleet share with a dedicated fire rate from Korean data.</li>
+            <li>Event-tree split: every fire scenario is partitioned into ICE and EV branches.</li>
+            <li>HF source term: FDS input generation adds battery-derived hydrogen fluoride release.</li>
+            <li>Dual-consequence evacuation: one simulation reports FED-only and FED+HF fatalities.</li>
+            <li>Backward compatibility: zero EV share reproduces legacy results.</li>
+            <li>An AI layer lets engineers query standards and results in natural language, with every
+            recommendation passing through a human review gate.</li>  
+          </ul>
+          
+          <div class="tags">
+            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stochastic modelling</span>
+            <span class="tag">Traffic equilibrium</span><span class="tag">Validation</span>
+            <span class="tag">RAG</span><span class="tag">Human-in-the-loop</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>Train Performance Simulation (TPS) System</h3>
+          <!-- TODO: name the optimisation method or library the driving-strategy layer uses -->
+          <p class="sub">Python · Rail operations modelling</p>
+          <p>
+            A train-performance simulator that models a train's movement along a route from track geometry,
+            gradients, speed limits, traction and braking characteristics. It computes run times, speed profiles
+            and energy use, and supports headway and operational planning studies for urban and mainline rail.
+          </p>
+          <p>
+            A built-in optimisation layer searches driving strategies — acceleration, cruising, coasting and braking
+            phases — to find speed profiles that minimise energy consumption within a target run time, letting operators 
+            trade journey time against traction energy and quantify the savings of eco-driving and timetable adjustments.
+          </p>
+          <div class="tags">
+            <span class="tag">Simulation</span><span class="tag">Rail planning</span><span class="tag">Energy optimization</span>
+            <span class="tag">Run-time optimization</span><span class="tag">Data visualisation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Production</span>
+          <h3>AI Decision-Support Platform for Infrastructure Risk</h3>
+          <p class="sub">LangChain · LangGraph · RAG · Node.js / TypeScript</p>
+          <p>
+            A model-agnostic RAG and agent platform that lets engineers query technical standards,
+            reports and simulation results in natural language. Multi-step agent workflows combine
+            deterministic engineering outputs with LLM reasoning, with validation layers and human
+            approval gates before any recommendation is accepted.
+          </p>
+          <div class="tags">
+            <span class="tag">RAG</span><span class="tag">Agentic workflows</span>
+            <span class="tag">Human-in-the-loop</span><span class="tag">Evaluation</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge live">Delivered</span>
+          <h3>Legal Process Automation Framework</h3>
+          <p class="sub">Government SME funding programme · Nigeria</p>
+          <p>
+            A platform that digitised the legal, compliance and approval chain governing phased fund
+            disbursement — rule-based funding gates, automated document generation, role-based approvals
+            and end-to-end audit trails — replacing a manual, document-heavy process.
+          </p>
+          <div class="tags">
+            <span class="tag">Workflow automation</span><span class="tag">APIs</span>
+            <span class="tag">Governance</span>
+          </div>
+        </div>
+
+      </div>
       <h3 class="subhead" id="agentops">Open-Source AI Engineering <small>A public, reproducible build of the agentic patterns I use in production work</small></h3>
       <article class="feature">
         <span class="badge build">Open-source build · in progress</span>
@@ -555,130 +688,11 @@
         </div>
       </article>
 
-      <h3 class="subhead" id="professional">Professional</h3>
-      <p class="section-intro">Safety-critical simulation tools and applied AI systems.</p>
-      <div class="grid two">
-
-        <div class="card">
-          <span class="badge live">Production</span>
-          <h3>Tunnel Fire Quantitative Risk Assessment (QRA) System: Clean Energy Vehicle Integration</h3>
-          <p class="sub">Python · PyQt · FDS · Monte Carlo evacuation modelling</p>
-          <p>
-            An application for quantitative risk assessment of road-tunnel fires. From a tunnel's geometry,
-            traffic and ventilation data, it generates fire-simulation inputs, runs fire and evacuation scenarios 
-            across fire positions and conditions, and computes evacuee exposure (FED), fatalities, societal-risk 
-            F–N curves and risk indices against acceptance criteria.
-          </p>
-          <p>
-            It includes a lane-level traffic model — multinomial-logit lane choice, a Greenshields
-            fundamental diagram and method-of-successive-averages equilibrium — and its traffic and risk
-            calculations are validated against reference outputs of the legacy tool it replaces.
-          </p>
-            Major developments over the legacy system:
-            <ul class="courses">
-            <li>EV fire statistics: the legacy system applied one fire rate per vehicle class; EVs are now a distinct fleet share with a dedicated fire rate from Korean data.</li>
-            <li>Event-tree split: every fire scenario is partitioned into ICE and EV branches.</li>
-            <li>HF source term: FDS input generation adds battery-derived hydrogen fluoride release.</li>
-            <li>Dual-consequence evacuation: one simulation reports FED-only and FED+HF fatalities.</li>
-            <li>Backward compatibility: zero EV share reproduces legacy results.</li>
-            <li>An AI layer lets engineers query standards and results in natural language, with every
-            recommendation passing through a human review gate.</li>  
-          </ul>
-          
-          <div class="tags">
-            <span class="tag">Fire and evacuation simulation</span><span class="tag">Stochastic modelling</span>
-            <span class="tag">Traffic equilibrium</span><span class="tag">Validation</span>
-            <span class="tag">RAG</span><span class="tag">Human-in-the-loop</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="badge live">Production</span>
-          <h3>Train Performance Simulation (TPS) System</h3>
-          <!-- TODO: name the optimisation method or library the driving-strategy layer uses -->
-          <p class="sub">Python · Rail operations modelling</p>
-          <p>
-            A train-performance simulator that models a train's movement along a route from track geometry,
-            gradients, speed limits, traction and braking characteristics. It computes run times, speed profiles
-            and energy use, and supports headway and operational planning studies for urban and mainline rail.
-          </p>
-          <p>
-            A built-in optimisation layer searches driving strategies — acceleration, cruising, coasting and braking
-            phases — to find speed profiles that minimise energy consumption within a target run time, letting operators 
-            trade journey time against traction energy and quantify the savings of eco-driving and timetable adjustments.
-          </p>
-          <div class="tags">
-            <span class="tag">Simulation</span><span class="tag">Rail planning</span><span class="tag">Energy optimization</span>
-            <span class="tag">Run-time optimization</span><span class="tag">Data visualisation</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="badge live">Production</span>
-          <h3>AI Decision-Support Platform for Infrastructure Risk</h3>
-          <p class="sub">LangChain · LangGraph · RAG · Node.js / TypeScript</p>
-          <p>
-            A model-agnostic RAG and agent platform that lets engineers query technical standards,
-            reports and simulation results in natural language. Multi-step agent workflows combine
-            deterministic engineering outputs with LLM reasoning, with validation layers and human
-            approval gates before any recommendation is accepted.
-          </p>
-          <div class="tags">
-            <span class="tag">RAG</span><span class="tag">Agentic workflows</span>
-            <span class="tag">Human-in-the-loop</span><span class="tag">Evaluation</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <span class="badge live">Delivered</span>
-          <h3>Legal Process Automation Framework</h3>
-          <p class="sub">Government SME funding programme · Nigeria</p>
-          <p>
-            A platform that digitised the legal, compliance and approval chain governing phased fund
-            disbursement — rule-based funding gates, automated document generation, role-based approvals
-            and end-to-end audit trails — replacing a manual, document-heavy process.
-          </p>
-          <div class="tags">
-            <span class="tag">Workflow automation</span><span class="tag">APIs</span>
-            <span class="tag">Governance</span>
-          </div>
-        </div>
-
-      </div>
       <p style="margin-top:18px;"><a href="https://github.com/Faithful007" target="_blank" rel="noopener">Explore my repositories →</a></p>
-
-      <h3 class="subhead" id="academia">Academia</h3>
-      <p class="section-intro">
-        Semester group projects I designed for undergraduate statistics at Ghent University Global Campus
-        (2022–2024). Hover to enlarge a card, or click to view the first page in full.
-      </p>
-      <!--
-        Each preview image is the first page of the brief, exported as PNG.
-        The images live in the repo at  assets/images/<file>.png  (A4 portrait, ~800px wide is plenty).
-      -->
-      <div class="pdf-grid">
-        <figure class="pdf-card" tabindex="0">
-          <span class="hint">Click to enlarge</span>
-          <img src="assets/images/EDA and Statistical testing.png" alt="First page: Exploratory data analysis and statistical testing, 2022–2023">
-          <figcaption><strong>Exploratory data analysis and statistical testing</strong><span>2022–2023</span></figcaption>
-        </figure>
-
-        <figure class="pdf-card" tabindex="0">
-          <span class="hint">Click to enlarge</span>
-          <img src="assets/images/Linear regression.png" alt="First page: Linear regression, 2023–2024">
-          <figcaption><strong>Linear regression</strong><span>2023–2024</span></figcaption>
-        </figure>
-
-        <figure class="pdf-card" tabindex="0">
-          <span class="hint">Click to enlarge</span>
-          <img src="assets/images/Non linear modeling.png" alt="First page: Non-linear modeling, 2023–2024">
-          <figcaption><strong>Non-linear modeling</strong><span>2023–2024</span></figcaption>
-        </figure>
-      </div>
     </section>
 
     <section id="skills">
-      <h2>Technical Skills</h2>
+      <h2>Skills &amp; Certifications</h2>
       <div class="skills">
         <div class="skill">
           <h3>Modelling &amp; Simulation</h3>
@@ -717,48 +731,20 @@
           <p>Design &amp; code reviews · mentoring and hiring · stakeholder workshops that turn ambiguous requirements into buildable designs · Agile / Scrum</p>
         </div>
       </div>
+      <div class="edu" style="margin-top:28px;">
+        <h3 class="subhead">Certifications</h3>
+        <p>IBM: Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI · Agentic AI with LangChain &amp; LangGraph · Building AI Agents and Agentic Workflows · Fundamentals of Building AI Agents · Vector Databases for RAG (2026) · Vanderbilt University: Prompt Engineering for ChatGPT (2026) · IO4PM™ Program Manager / Project Manager / Project Requirement Analyst (2023) · CompTIA Security+</p>
+        <h3 class="subhead">Languages</h3>
+        <p>English (professional working proficiency) · Korean (basic). Based in South Korea since 2021, working with stakeholders across Korea, Europe and Africa.</p>
+      </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
+    <section id="academic">
+      <h2>Academic Experience &amp; Education</h2>
       <p class="section-intro">
-        Sixteen years across industry and academia — building simulation, data and AI systems while
-        teaching and researching at tertiary level.
+        Research, lecturing and teaching assistance at tertiary level, alongside the industry work above.
       </p>
-
-      <h3 class="subhead">Industry Experience <small>Software engineering, AI systems and data · 2010 – present</small></h3>
-      <div class="timeline">
-        <div class="job">
-          <div class="head">
-            <div><h3>Senior System Developer — Team Lead, AI Systems</h3><div class="org">Bumchang Engineering Co. Ltd · Seoul, South Korea</div></div>
-            <div class="when">Nov 2025 – Present</div>
-          </div>
-          <p>Technical lead for simulation and AI-enabled decision-support platforms in a safety-critical infrastructure-risk domain, including the TPS and QRA systems. Own the agentic AI lifecycle from prototype to production: LangGraph/LangChain agent workflows that reason over deterministic simulation outputs, RAG pipelines, a model-agnostic LLM layer, evaluation harnesses for grounding and hallucination detection, and human approval gates. Delivered the production data platform within three months, cutting manual data processing by 60%.</p>
-        </div>
-        <div class="job">
-          <div class="head">
-            <div><h3>Full-Stack / Platform Engineer — Team Lead (AI Systems)</h3><div class="org">FunWorld Company · Incheon, South Korea</div></div>
-            <div class="when">Sep 2024 – Oct 2025</div>
-          </div>
-          <p>Shipped LLM-powered features in production Node.js/TypeScript services — prompt templates, error handling, rate limiting and usage monitoring — piloted agent workflows for internal reporting, and built data-integration pipelines that improved reporting workflows by 40%.</p>
-        </div>
-        <div class="job">
-          <div class="head">
-            <div><h3>Software Developer / Database Administrator</h3><div class="org">Avenue Impact Consulting · Port Harcourt, Nigeria</div></div>
-            <div class="when">Jan 2015 – Aug 2021</div>
-          </div>
-          <p>Led a six-engineer team delivering a legal process-automation platform for a government SME funding programme in a client-facing consulting setting; administered databases handling over a million transactions a day and cut query execution time by 40%.</p>
-        </div>
-        <div class="job">
-          <div class="head">
-            <div><h3>Data Analyst</h3><div class="org">Saev-Mesa Technologies · Lagos, Nigeria</div></div>
-            <div class="when">Mar 2010 – Dec 2014</div>
-          </div>
-          <p>Automated KPI reporting and dashboards with Tableau, Power BI and Excel, halving analysis time and supporting initiatives behind 20% revenue growth.</p>
-        </div>
-      </div>
-
-      <h3 class="subhead">Academic Experience <small>Research, lecturing and teaching assistance · 2012 – 2024</small></h3>
+      <h3 class="subhead">Positions <small>Research, lecturing and teaching assistance · 2012 – 2024</small></h3>
       <div class="timeline">
         <div class="job">
           <div class="head">
@@ -775,6 +761,34 @@
           <p>Taught programming (C, C++, Java, Python) and computer-applications courses (Microsoft Excel, databases) to National Diploma and Higher National Diploma students — delivering lectures and laboratory sessions, setting and marking examinations, and supervising student projects over nine academic years.</p>
         </div>
       </div>
+      <h3 class="subhead" id="academia">Student Project Briefs</h3>
+      <p class="section-intro">
+        Semester group projects I designed for undergraduate statistics at Ghent University Global Campus
+        (2022–2024). Hover to enlarge a card, or click to view the first page in full.
+      </p>
+      <!--
+        Each preview image is the first page of the brief, exported as PNG.
+        The images live in the repo at  assets/images/<file>.png  (A4 portrait, ~800px wide is plenty).
+      -->
+      <div class="pdf-grid">
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="assets/images/EDA and Statistical testing.png" alt="First page: Exploratory data analysis and statistical testing, 2022–2023">
+          <figcaption><strong>Exploratory data analysis and statistical testing</strong><span>2022–2023</span></figcaption>
+        </figure>
+
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="assets/images/Linear regression.png" alt="First page: Linear regression, 2023–2024">
+          <figcaption><strong>Linear regression</strong><span>2023–2024</span></figcaption>
+        </figure>
+
+        <figure class="pdf-card" tabindex="0">
+          <span class="hint">Click to enlarge</span>
+          <img src="assets/images/Non linear modeling.png" alt="First page: Non-linear modeling, 2023–2024">
+          <figcaption><strong>Non-linear modeling</strong><span>2023–2024</span></figcaption>
+        </figure>
+      </div>
       <div class="edu">
         <h3 class="subhead">Education</h3>
         <ul>
@@ -782,10 +796,6 @@
           <li><strong>B.Tech. Mathematics &amp; Computer Science</strong> (five-year programme) — Federal University of Technology, Minna <span>2008</span></li>
         </ul>
         <p>B.Tech. coursework included Systems Operations Research, Optimization Theory, Distribution Theory, Real Analysis, Functional Analysis, and Lebesgue Measure and Integration.</p>
-        <h3 class="subhead">Certifications</h3>
-        <p>IBM: Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI · Agentic AI with LangChain &amp; LangGraph · Building AI Agents and Agentic Workflows · Fundamentals of Building AI Agents · Vector Databases for RAG (2026) · Vanderbilt University: Prompt Engineering for ChatGPT (2026) · IO4PM™ Program Manager / Project Manager / Project Requirement Analyst (2023) · CompTIA Security+</p>
-        <h3 class="subhead">Languages</h3>
-        <p>English (professional working proficiency) · Korean (basic). Based in South Korea since 2021, working with stakeholders across Korea, Europe and Africa.</p>
       </div>
     </section>
 
