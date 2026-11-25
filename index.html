@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Abiodun Adebowale Ilugbusi — AI engineer and computer scientist building agentic AI, RAG and simulation-based decision-support systems for safety-critical transport infrastructure, with twelve years of higher-education teaching.">
-  <title>Abiodun Ilugbusi | Agentic AI &amp; Decision-Support Systems for Infrastructure</title>
+  <meta name="description" content="Abiodun Adebowale Ilugbusi — AI systems engineer and computer science educator. Agentic AI, retrieval-augmented generation, simulation and optimisation for transport infrastructure, tunnel-fire safety and energy-efficient railway operations, with twelve years of tertiary-level teaching.">
+  <title>Abiodun Ilugbusi | AI Systems Engineer · Computational Modelling &amp; Optimisation · Educator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -55,11 +55,45 @@
       max-width: 1000px; margin: auto; padding: 72px 20px 56px;
       display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
     }
-    .hero h1 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.15; }
-    .hero .role { color: var(--accent-2); font-weight: 600; margin: 12px 0 4px; font-size: 1.1rem; }
-    .hero .lead { color: var(--muted); max-width: 58ch; margin: 10px 0 24px; }
-    .hero .meta { color: var(--muted); font-size: 0.95rem; }
-    .hero .meta span { margin-right: 18px; white-space: nowrap; }
+    .hero { padding-bottom: 36px; }
+    .hero h1 { font-size: clamp(2.1rem, 4.4vw, 3.1rem); line-height: 1.12; }
+    .hero .role { color: var(--accent-2); font-weight: 600; margin: 14px 0 0; font-size: 1rem; line-height: 1.6; }
+    .hero .role span { white-space: nowrap; }
+    .hero .role i { font-style: normal; color: var(--line); margin: 0 8px; }
+    .hero .lead { color: var(--text); max-width: 60ch; margin: 18px 0 0; font-size: 1.06rem; }
+    .hero .lead + .lead { color: var(--muted); font-size: 1rem; margin-top: 12px; }
+    .hero .meta { color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .hero .meta span { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+    .hero .links { margin-top: 16px; font-size: 0.93rem; font-weight: 500; }
+    .hero .links a { margin-right: 20px; }
+
+    /* Three things the first screen has to say */
+    .pillars { max-width: 1000px; margin: 0 auto; padding: 0 20px 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .pillar {
+      display: block; background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--accent);
+      border-radius: 12px; padding: 20px 22px; color: var(--text);
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .pillar:hover { text-decoration: none; transform: translateY(-2px); border-color: var(--accent); }
+    .pillar .k { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .pillar h2 { font-size: 1.15rem; margin: 6px 0 8px; color: var(--text); }
+    .pillar p { margin: 0 0 10px; font-size: 0.93rem; color: var(--muted); line-height: 1.6; }
+    .pillar .go { color: var(--accent); font-weight: 600; font-size: 0.88rem; }
+
+    /* Teaching statement */
+    .philosophy {
+      background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 14px; padding: 26px 28px; margin-bottom: 18px;
+    }
+    .philosophy .pub-type { margin-bottom: 10px; }
+    .philosophy p { margin: 0 0 12px; max-width: 78ch; }
+    .philosophy p:last-child { margin-bottom: 0; }
+    .philosophy .big { font-family: "Source Serif 4", Georgia, serif; font-size: 1.28rem; line-height: 1.5; color: var(--text); }
+    .grid.pair { grid-template-columns: repeat(2, 1fr); }
+    .card .num { font-family: "Source Serif 4", Georgia, serif; color: var(--accent); font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; display: block; }
+    .teach-foot { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
+    .teach-foot .tags { margin: 0; }
+    .teach-foot .label { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
     .btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
     .btn {
       display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600;
@@ -277,7 +311,14 @@
       .feature { padding: 22px 18px; }
       .feature-top { grid-template-columns: 1fr; }
       .hero > div { min-width: 0; }
-      .hero .meta span { display: block; white-space: normal; margin: 0 0 4px; }
+      .hero .meta { justify-content: center; }
+      .hero .role i { display: none; }
+      .hero .role span { display: block; }
+      .hero .links a { margin: 0 10px; }
+      .pillars { grid-template-columns: 1fr; padding-bottom: 40px; }
+      .grid.pair { grid-template-columns: 1fr; }
+      .philosophy { padding: 22px 20px; }
+      .philosophy .big { font-size: 1.12rem; }
       .flow { overflow-x: auto; }
       .flow svg { min-width: 500px; }
     }
@@ -289,13 +330,13 @@
     <div class="inner">
       <span class="brand">Abiodun Ilugbusi</span>
       <nav>
-        <!-- <a href="#about">About</a> -->
-        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
-        <a href="#proposals">Proposals</a>
+        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#teaching">Teaching</a>
+        <a href="#teaching-statement">Teaching Statement</a>
         <a href="#research">Research</a>
+        <a href="#proposals">Roadmap</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -304,37 +345,63 @@
   <header class="hero">
     <div>
       <h1>Abiodun Adebowale Ilugbusi</h1>
-      <div class="role">Agentic AI &amp; RAG Systems · Transport Simulation &amp; Risk Modelling · Optimisation · Computer Science Educator</div>
+      <div class="role">
+        <span>AI Systems Engineer</span><i>|</i><span>Computational Modelling &amp; Optimisation</span><i>|</i><span>Computer Science Educator</span>
+      </div>
       <p class="lead">
-        I build quantitative decision-support software for safety-critical transport infrastructure:
-        a Monte Carlo risk-assessment system for road-tunnel fires and a train performance simulator
-        with an energy-optimal driving layer. On top of those models I design and ship generative-AI
-        systems — retrieval-augmented querying, multi-agent workflows, evaluation harnesses and
-        human approval gates — so that engineers stay in control of AI-assisted analysis. Alongside
-        industry work, I have spent twelve years teaching computer science and statistics in higher
-        education.
+        I design and build intelligent software and quantitative decision-support systems for complex
+        engineering problems. My work combines agentic AI, retrieval-augmented generation, statistical
+        modelling, simulation and optimisation, applied to transport infrastructure, tunnel-fire safety
+        and energy-efficient railway operations.
+      </p>
+      <p class="lead">
+        With twelve years of tertiary-level teaching and more than ten years in industry, I bring
+        together practical software engineering, mathematical modelling, research and education.
       </p>
       <div class="meta">
-        <span>📍 Incheon, South Korea</span>
-        <span>💼 10+ years in software &amp; AI</span>
-        <span>📚 12 years college teaching</span>
-        <span>🎓 B.Tech. Mathematics &amp; Computer Science, M.Tech. Computer Science</span>
+        <span>Incheon, South Korea</span>
+        <span>M.Tech. Computer Science</span>
+        <span>B.Tech. Mathematics &amp; Computer Science</span>
+        <span>IEEE-published research</span>
       </div>
       <div class="btns">
         <a class="btn primary" href="#projects">View projects</a>
-        <!-- Upload the CV to the repo as assets/cv_ilugbusi.pdf -->
-        <a class="btn" href="assets/doc/cv_ilugbusi.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <a class="btn" href="https://github.com/abiodun-devs" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="assets/doc/CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        <a class="btn" href="#teaching-statement">Teaching statement</a>
+      </div>
+      <div class="links">
+        <a href="https://github.com/Faithful007" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
       </div>
     </div>
     <div class="photo-wrap">
-      <!-- Add your passport photo to the repo as assets/images/photo.jpeg (portrait, roughly 35×45 mm ratio) -->
-      <img class="photo" src="assets/images/photo.jpeg" alt="Portrait of Abiodun Adebowale Ilugbusi">
+      <img class="photo" src="assets/images/photo.jpg" alt="Portrait of Abiodun Adebowale Ilugbusi">
       <small>Abiodun A. Ilugbusi</small>
     </div>
   </header>
+
+  <!-- Who I am, what I specialise in, what is distinctive -->
+  <div class="pillars">
+    <a class="pillar" href="#agentops">
+      <span class="k">AI systems</span>
+      <h2>Agentic AI that engineers can trust</h2>
+      <p>Multi-agent workflows, RAG, evaluation harnesses and human approval gates, taken from prototype to production.</p>
+      <span class="go">See the AI work →</span>
+    </a>
+    <a class="pillar" href="#professional">
+      <span class="k">Modelling &amp; optimisation</span>
+      <h2>Simulation for safety-critical infrastructure</h2>
+      <p>A Monte Carlo risk-assessment system for road-tunnel fires and a train performance simulator with energy-optimal driving.</p>
+      <span class="go">See the engineering systems →</span>
+    </a>
+    <a class="pillar" href="#teaching-statement">
+      <span class="k">Education</span>
+      <h2>Twelve years in the classroom</h2>
+      <p>Computer science lecturer and statistics teaching assistant; I teach from the same problems I solve in industry.</p>
+      <span class="go">Read the teaching statement →</span>
+    </a>
+  </div>
 
   <main>
 
@@ -357,48 +424,6 @@
         South Korea since 2021 and have worked across Korean, European and African organisations.
       </p>
     </section> -->
-
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="skills">
-        <div class="skill">
-          <h3>Modelling &amp; Simulation</h3>
-          <p>Simulation modelling (train dynamics, traffic flow, evacuation) · Monte Carlo methods · quantitative risk assessment · statistics &amp; regression</p>
-        </div>
-        <div class="skill">
-          <h3>Languages</h3>
-          <p>Python, R, C, C++, Java, TypeScript, JavaScript (Node.js), SQL, Golang</p>
-        </div>
-        <div class="skill">
-          <h3>Data &amp; ML</h3>
-          <p>PostgreSQL, MySQL, MongoDB · Apache Spark, Kafka, Airflow · ETL &amp; integration · PyTorch, TensorFlow, Scikit-learn · BentoML, ONNX Runtime</p>
-        </div>
-        <div class="skill">
-          <h3>AI Agents &amp; Orchestration</h3>
-          <p>LangChain, LangGraph, LangSmith, CrewAI, AutoGen, Copilot Studio · multi-agent workflows, tool use, routing and human-in-the-loop design · RAG with pgvector, Chroma and FAISS · model-agnostic LLM integration (GPT, Claude, Gemini, Llama, Mistral) · prompt &amp; context engineering</p>
-        </div>
-        <div class="skill">
-          <h3>Evaluation &amp; AI Safety</h3>
-          <p>Evaluation harnesses and regression gates · factual accuracy, source grounding &amp; hallucination detection · prompt robustness and red-team testing · cost, feasibility &amp; reliability assessment · access-control, privacy &amp; compliance guardrails</p>
-        </div>
-        <div class="skill">
-          <h3>Backend &amp; APIs</h3>
-          <p>Node.js, Nest.js, Express, FastAPI, Django · React / Next.js · REST, GraphQL, OData · microservices</p>
-        </div>
-        <div class="skill">
-          <h3>Cloud &amp; DevOps</h3>
-          <p>AWS, Azure, Docker, Kubernetes · CI/CD (Jenkins, GitLab CI) · Git</p>
-        </div>
-        <div class="skill">
-          <h3>Observability, Testing &amp; Security</h3>
-          <p>Grafana, Prometheus, ELK, OpenTelemetry · Jest, Playwright, Supertest, pytest · access control, audit trails, data-quality validation · CompTIA Security+</p>
-        </div>
-        <div class="skill">
-          <h3>Leadership &amp; Delivery</h3>
-          <p>Design &amp; code reviews · mentoring and hiring · stakeholder workshops that turn ambiguous requirements into buildable designs · Agile / Scrum</p>
-        </div>
-      </div>
-    </section>
 
     <section id="projects">
       <h2>Projects</h2>
@@ -523,14 +548,14 @@
         </div>
 
         <div class="feature-links">
-          <!-- Upload the guide to the repo as docs/AgentOps_Intelligence_Platform_Complete_Guide.pdf -->
-          <a class="btn primary" href="docs/AgentOps_Intelligence_Platform_Complete_Guide.pdf" target="_blank" rel="noopener">Technical design guide (PDF)</a>
+          <!-- Upload the guide to the repo as assets/doc/AgentOps_Intelligence_Platform_Complete_Guide.pdf -->
+          <a class="btn primary" href="assets/doc/AgentOps_Intelligence_Platform_Complete_Guide.pdf" target="_blank" rel="noopener">Technical design guide (PDF)</a>
           <!-- When the code is pushed, set the repository URL below and uncomment the line -->
-          <!-- <a class="btn" href="https://github.com/abiodun-devs/agentops-intelligence" target="_blank" rel="noopener">Source code on GitHub</a> -->
+          <!-- <a class="btn" href="https://github.com/Faithful007/agentops-intelligence" target="_blank" rel="noopener">Source code on GitHub</a> -->
         </div>
       </article>
 
-      <h3 class="subhead">Professional</h3>
+      <h3 class="subhead" id="professional">Professional</h3>
       <p class="section-intro">Safety-critical simulation tools and applied AI systems.</p>
       <div class="grid two">
 
@@ -620,7 +645,7 @@
         </div>
 
       </div>
-      <p style="margin-top:18px;"><a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">Explore my repositories →</a></p>
+      <p style="margin-top:18px;"><a href="https://github.com/Faithful007" target="_blank" rel="noopener">Explore my repositories →</a></p>
 
       <h3 class="subhead" id="academia">Academia</h3>
       <p class="section-intro">
@@ -629,108 +654,68 @@
       </p>
       <!--
         Each preview image is the first page of the brief, exported as PNG.
-        Put the images in the repo at  previews/<file>.png  (A4 portrait, ~800px wide is plenty).
+        The images live in the repo at  assets/images/<file>.png  (A4 portrait, ~800px wide is plenty).
       -->
       <div class="pdf-grid">
         <figure class="pdf-card" tabindex="0">
           <span class="hint">Click to enlarge</span>
-          <img src="previews/Exploratory data analysis and statistical testing.png" alt="First page: Exploratory data analysis and statistical testing, 2022–2023">
+          <img src="assets/images/EDA and Statistical testing.png" alt="First page: Exploratory data analysis and statistical testing, 2022–2023">
           <figcaption><strong>Exploratory data analysis and statistical testing</strong><span>2022–2023</span></figcaption>
         </figure>
 
         <figure class="pdf-card" tabindex="0">
           <span class="hint">Click to enlarge</span>
-          <img src="previews/Linear regression.png" alt="First page: Linear regression, 2023–2024">
+          <img src="assets/images/Linear regression.png" alt="First page: Linear regression, 2023–2024">
           <figcaption><strong>Linear regression</strong><span>2023–2024</span></figcaption>
         </figure>
 
         <figure class="pdf-card" tabindex="0">
           <span class="hint">Click to enlarge</span>
-          <img src="previews/Non-linear modeling.png" alt="First page: Non-linear modeling, 2023–2024">
+          <img src="assets/images/Non linear modeling.png" alt="First page: Non-linear modeling, 2023–2024">
           <figcaption><strong>Non-linear modeling</strong><span>2023–2024</span></figcaption>
         </figure>
       </div>
     </section>
 
-    <section id="proposals">
-      <h2>Proposals &amp; Roadmap</h2>
-      <p class="section-intro">Extensions I have scoped and proposed but not yet implemented. These describe the direction the work is heading.</p>
-      <div class="grid two">
-
-        <div class="card">
-          <span class="badge proposed">Research direction (concept)</span>
-          <h3>From Single-Tunnel Risk to Network Resilience</h3>
-          <p>
-            A tunnel or rail section is one link in a network. This direction moves from assessing the
-            risk of a single asset to choosing investments and response plans for a whole multimodal
-            network: optimisation under uncertainty over disruption scenarios, with simulation models
-            such as the QRA and TPS systems supplying event frequencies, running times and energy use.
-          </p>
-          <div class="tags"><span class="tag">Optimisation under uncertainty</span><span class="tag">Resilient transport</span><span class="tag">Simulation-based optimisation</span></div>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <h3>Modelling &amp; Simulation</h3>
+          <p>Simulation modelling (train dynamics, traffic flow, evacuation) · Monte Carlo methods · quantitative risk assessment · statistics &amp; regression</p>
         </div>
-
-        
-        <div class="card">
-          <span class="badge proposed">Concept</span>
-          <h3>QRA Extension for Clean-Energy Vehicles</h3>
-          <p>
-            Extend the tunnel QRA system beyond conventional fuels to cover electric and hydrogen
-            vehicles — battery thermal-runaway and hydrogen-release fire scenarios, revised heat-release
-            and toxic-gas profiles, and updated accident-frequency tables as road freight shifts to battery-electric and hydrogen trucks.
-          </p>
-          <div class="tags"><span class="tag">EV / H₂ fire scenarios</span><span class="tag">Risk modelling</span></div>
+        <div class="skill">
+          <h3>Languages</h3>
+          <p>Python, R, C, C++, Java, TypeScript, JavaScript (Node.js), SQL, Golang</p>
         </div>
-
-        
-
-        <div class="card">
-          <span class="badge proposed">Concept</span>
-          <h3>AI-Assisted QRA Review &amp; Reporting</h3>
-          <p>
-            Integrate the RAG/agent platform with the QRA engine so that simulation results are
-            automatically cross-checked against tunnel safety standards, anomalies are flagged, and
-            draft assessment reports are generated for engineer review and sign-off.
-          </p>
-          <div class="tags"><span class="tag">Agentic workflow</span><span class="tag">Human approval gates</span></div>
+        <div class="skill">
+          <h3>Data &amp; ML</h3>
+          <p>PostgreSQL, MySQL, MongoDB · Apache Spark, Kafka, Airflow · ETL &amp; integration · PyTorch, TensorFlow, Scikit-learn · BentoML, ONNX Runtime</p>
         </div>
-
-        <!-- <div class="card">
-          <span class="badge proposed">Proposed</span>
-          <h3>Multilingual, User-Centric Interface</h3>
-          <p>
-            Redesign the QRA and TPS interfaces with full Korean/English language support, guided
-            scenario setup, and clearer result dashboards so that non-specialist engineers can run and
-            interpret assessments with less training.
-          </p>
-          <div class="tags"><span class="tag">UX</span><span class="tag">i18n</span></div>
+        <div class="skill">
+          <h3>AI Agents &amp; Orchestration</h3>
+          <p>LangChain, LangGraph, LangSmith, CrewAI, AutoGen, Copilot Studio · multi-agent workflows, tool use, routing and human-in-the-loop design · RAG with pgvector, Chroma and FAISS · model-agnostic LLM integration (GPT, Claude, Gemini, Llama, Mistral) · prompt &amp; context engineering</p>
         </div>
-
-        <div class="card">
-          <span class="badge proposed">Proposed</span>
-          <h3>National Government Identity Cybersecurity and Digital Trust Programme</h3>
-          <p>
-            As Nigeria's 136 million national identification numbers (NINs), biometric passports and digital driver's licenses 
-            become the gateway to every public service, a breach anywhere in the ecosystem follows a citizen everywhere. 
-            NGIS-DTP proposes a national trust framework in which agencies verify rather than replicate: a trust broker returns 
-            purpose-specific assertions from NIMC, NIS, FRSC, banks and telecom operators, modelled on South Korea's PASS and certain 
-            verification, under a government-wide Zero Trust and privacy-by-design architecture. 
-          </p>
-          <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">Zero-trust authentication</span><span class="tag">Unified security</span></div>
+        <div class="skill">
+          <h3>Evaluation &amp; AI Safety</h3>
+          <p>Evaluation harnesses and regression gates · factual accuracy, source grounding &amp; hallucination detection · prompt robustness and red-team testing · cost, feasibility &amp; reliability assessment · access-control, privacy &amp; compliance guardrails</p>
         </div>
-
-        <div class="card">
-          <span class="badge proposed">Proposed</span>
-          <h3>Lagos Smart Mobility Transformation Programme</h3>
-          <p>
-            Lagos does not need another transport system; it needs the digital operating layer that makes the 
-            one it has predictable, cashless and accountable. L-STOMP applies the architecture of Seoul's TOPIS 
-            and integrated transport card to Lagos BRT, buses, rail and ferries, turning every journey into an 
-            observable, schedulable, payable and auditable event, from real-time arrival information at the stop
-            to performance-based operator settlement that traces every naira from passenger to operator. 
-          </p>
-          <div class="tags"><span class="tag">Convenient payment</span><span class="tag">Transparency</span><span class="tag">Accountability</span></div>
-        </div> -->
-        
+        <div class="skill">
+          <h3>Backend &amp; APIs</h3>
+          <p>Node.js, Nest.js, Express, FastAPI, Django · React / Next.js · REST, GraphQL, OData · microservices</p>
+        </div>
+        <div class="skill">
+          <h3>Cloud &amp; DevOps</h3>
+          <p>AWS, Azure, Docker, Kubernetes · CI/CD (Jenkins, GitLab CI) · Git</p>
+        </div>
+        <div class="skill">
+          <h3>Observability, Testing &amp; Security</h3>
+          <p>Grafana, Prometheus, ELK, OpenTelemetry · Jest, Playwright, Supertest, pytest · access control, audit trails, data-quality validation · CompTIA Security+</p>
+        </div>
+        <div class="skill">
+          <h3>Leadership &amp; Delivery</h3>
+          <p>Design &amp; code reviews · mentoring and hiring · stakeholder workshops that turn ambiguous requirements into buildable designs · Agile / Scrum</p>
+        </div>
       </div>
     </section>
 
@@ -886,6 +871,143 @@
       </div>
     </section>
 
+    <section id="teaching-statement">
+      <h2>Teaching Statement</h2>
+      <p class="section-intro">
+        How I teach, why I teach that way, and what students can expect from a course I run.
+      </p>
+
+      <div class="philosophy">
+        <div class="pub-type">Teaching philosophy</div>
+        <p class="big">
+          I teach computing and statistics as ways of reasoning about real problems, not as collections
+          of syntax and formulas.
+        </p>
+        <p>
+          A student has learned something when they can face an unfamiliar problem, choose a method,
+          defend the choice, and say what the result does and does not show. Producing an answer is the
+          smaller part; the judgement around it is what lasts beyond the examination.
+        </p>
+        <p>
+          Two convictions follow from that. First, understanding is built by doing: students need to
+          write the program, run the analysis and be wrong in a setting where being wrong is cheap.
+          Second, every student in the room can get there. Over nine years at a polytechnic and three at
+          an international campus I have taught first-time programmers and confident ones in the same
+          class, and my job is to give each a route to the same standard.
+        </p>
+      </div>
+
+      <div class="grid pair">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Teaching Methodology</h3>
+          <p>
+            Each topic moves through three steps: I explain the idea, demonstrate it live, and then
+            students practise it themselves. In programming classes that means writing code in front of
+            the class, mistakes included, so students see how a problem is actually worked out and how
+            errors are found.
+          </p>
+          <p>
+            Laboratory and practical sessions carry as much weight as lectures. Tasks start from a
+            worked example and are progressively opened up until students are working without a
+            template.
+          </p>
+          <div class="tags"><span class="tag">Live coding</span><span class="tag">Worked examples</span><span class="tag">Lab-centred</span></div>
+        </div>
+
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Curriculum &amp; Course Development</h3>
+          <p>
+            I design a course backwards from what students should be able to do at the end. At Federal
+            Polytechnic Idah I taught the programming sequence in C, C++, Java and Python, so that each
+            language introduced a new way of thinking rather than repeating the last one.
+          </p>
+          <p>
+            At Ghent University Global Campus I built the statistics group projects for each cohort
+            from scratch: the dataset, the research questions, the analysis brief and the grading
+            rubric, arranged so that the difficulty rises from descriptive analysis to non-linear
+            modelling.
+          </p>
+          <div class="tags"><span class="tag">Backward design</span><span class="tag">Learning outcomes</span><span class="tag">Progression</span></div>
+        </div>
+
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Student Assessment &amp; Feedback</h3>
+          <p>
+            Students should know how they will be judged before they start. I publish the rubric with
+            the assignment, and I grade reasoning and choice of method alongside the final result.
+          </p>
+          <p>
+            Feedback is written, specific and usable: what was done well, what the analysis cannot
+            support, and what to change next time. I have set and marked examinations, graded practical
+            work and project reports, and used office hours for the conversations that written comments
+            cannot replace.
+          </p>
+          <div class="tags"><span class="tag">Published rubrics</span><span class="tag">Written feedback</span><span class="tag">Office hours</span></div>
+        </div>
+
+        <div class="card">
+          <span class="num">04</span>
+          <h3>Project-Based Learning</h3>
+          <p>
+            Projects are where separate topics become one skill. My statistics students worked in
+            groups for a full semester on real data, for example a liver-function dataset of 591
+            volunteers, and had to turn an open question into an analysis they could defend.
+          </p>
+          <p>
+            As a lecturer I supervised National Diploma and Higher National Diploma student projects
+            from proposal to working software. Group work also teaches what individual assignments
+            cannot: dividing a problem, reviewing each other's work and writing for a reader.
+          </p>
+          <p class="sub"><a href="#academia">See the project briefs →</a></p>
+          <div class="tags"><span class="tag">Real datasets</span><span class="tag">Group work</span><span class="tag">Supervision</span></div>
+        </div>
+
+        <div class="card">
+          <span class="num">05</span>
+          <h3>Industry Experience in the Classroom</h3>
+          <p>
+            I teach from problems I work on. Monte Carlo simulation is easier to grasp when the
+            question is how many people can evacuate a tunnel fire; optimisation is easier when the
+            goal is a train that arrives on time using less energy.
+          </p>
+          <p>
+            I also teach the working habits that industry expects and courses often leave out: version
+            control, testing, code review, validating a model against reference results, and
+            documenting work so that someone else can reproduce it.
+          </p>
+          <div class="tags"><span class="tag">Applied examples</span><span class="tag">Engineering practice</span><span class="tag">Reproducibility</span></div>
+        </div>
+
+        <div class="card">
+          <span class="num">06</span>
+          <h3>AI in Teaching &amp; Learning</h3>
+          <p>
+            Students now have AI assistants beside them, and I would rather teach them to use these
+            tools well than pretend otherwise. Building AI systems professionally has taught me where
+            they fail, so I ask students to check an AI-generated answer the way an engineer would:
+            against evidence, with tests, and with a clear account of what they verified themselves.
+          </p>
+          <div class="tags"><span class="tag">Responsible AI use</span><span class="tag">Verification</span><span class="tag">Critical thinking</span></div>
+        </div>
+      </div>
+
+      <div class="teach-foot">
+        <div>
+          <div class="label">Courses I am prepared to teach</div>
+          <div class="tags">
+            <span class="tag">Introductory programming</span><span class="tag">Object-oriented programming</span>
+            <span class="tag">Databases &amp; SQL</span><span class="tag">Applied statistics</span>
+            <span class="tag">Modelling &amp; simulation</span><span class="tag">Software engineering</span>
+            <span class="tag">Applied AI &amp; LLM systems</span>
+          </div>
+        </div>
+        <a class="btn" href="assets/doc/Teaching_Statements.pdf" target="_blank" rel="noopener">Full teaching statement (PDF)</a>
+      </div>
+    </section>
+
     <section id="research">
       <h2>Research &amp; Publications</h2>
       <p class="section-intro">
@@ -926,13 +1048,95 @@
       </div>
     </section>
 
+    <section id="proposals">
+      <h2>Roadmap &amp; Proposals</h2>
+      <p class="section-intro">Extensions I have scoped and proposed but not yet implemented. These describe the direction the work is heading.</p>
+      <div class="grid two">
+
+        <div class="card">
+          <span class="badge proposed">Research direction (concept)</span>
+          <h3>From Single-Tunnel Risk to Network Resilience</h3>
+          <p>
+            A tunnel or rail section is one link in a network. This direction moves from assessing the
+            risk of a single asset to choosing investments and response plans for a whole multimodal
+            network: optimisation under uncertainty over disruption scenarios, with simulation models
+            such as the QRA and TPS systems supplying event frequencies, running times and energy use.
+          </p>
+          <div class="tags"><span class="tag">Optimisation under uncertainty</span><span class="tag">Resilient transport</span><span class="tag">Simulation-based optimisation</span></div>
+        </div>
+
+        
+        <div class="card">
+          <span class="badge proposed">Concept</span>
+          <h3>QRA Extension for Clean-Energy Vehicles</h3>
+          <p>
+            Extend the tunnel QRA system beyond conventional fuels to cover electric and hydrogen
+            vehicles — battery thermal-runaway and hydrogen-release fire scenarios, revised heat-release
+            and toxic-gas profiles, and updated accident-frequency tables as road freight shifts to battery-electric and hydrogen trucks.
+          </p>
+          <div class="tags"><span class="tag">EV / H₂ fire scenarios</span><span class="tag">Risk modelling</span></div>
+        </div>
+
+        
+
+        <div class="card">
+          <span class="badge proposed">Concept</span>
+          <h3>AI-Assisted QRA Review &amp; Reporting</h3>
+          <p>
+            Integrate the RAG/agent platform with the QRA engine so that simulation results are
+            automatically cross-checked against tunnel safety standards, anomalies are flagged, and
+            draft assessment reports are generated for engineer review and sign-off.
+          </p>
+          <div class="tags"><span class="tag">Agentic workflow</span><span class="tag">Human approval gates</span></div>
+        </div>
+
+        <!-- <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Multilingual, User-Centric Interface</h3>
+          <p>
+            Redesign the QRA and TPS interfaces with full Korean/English language support, guided
+            scenario setup, and clearer result dashboards so that non-specialist engineers can run and
+            interpret assessments with less training.
+          </p>
+          <div class="tags"><span class="tag">UX</span><span class="tag">i18n</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>National Government Identity Cybersecurity and Digital Trust Programme</h3>
+          <p>
+            As Nigeria's 136 million national identification numbers (NINs), biometric passports and digital driver's licenses 
+            become the gateway to every public service, a breach anywhere in the ecosystem follows a citizen everywhere. 
+            NGIS-DTP proposes a national trust framework in which agencies verify rather than replicate: a trust broker returns 
+            purpose-specific assertions from NIMC, NIS, FRSC, banks and telecom operators, modelled on South Korea's PASS and certain 
+            verification, under a government-wide Zero Trust and privacy-by-design architecture. 
+          </p>
+          <div class="tags"><span class="tag">Cybersecurity</span><span class="tag">Zero-trust authentication</span><span class="tag">Unified security</span></div>
+        </div>
+
+        <div class="card">
+          <span class="badge proposed">Proposed</span>
+          <h3>Lagos Smart Mobility Transformation Programme</h3>
+          <p>
+            Lagos does not need another transport system; it needs the digital operating layer that makes the 
+            one it has predictable, cashless and accountable. L-STOMP applies the architecture of Seoul's TOPIS 
+            and integrated transport card to Lagos BRT, buses, rail and ferries, turning every journey into an 
+            observable, schedulable, payable and auditable event, from real-time arrival information at the stop
+            to performance-based operator settlement that traces every naira from passenger to operator. 
+          </p>
+          <div class="tags"><span class="tag">Convenient payment</span><span class="tag">Transparency</span><span class="tag">Accountability</span></div>
+        </div> -->
+        
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact</h2>
       <p class="section-intro">Open to conversations about generative-AI and agentic systems engineering, transport modelling and risk, optimisation and decision support, and research collaboration.</p>
       <div class="contact-list">
         <a href="mailto:aailugbusi@gmail.com">
           <span class="ico">
-            <img src="assets/email.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="assets/images/email.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM4.8 7l7.2 4.8L19.2 7H4.8z"/></svg>
           </span>
           aailugbusi@gmail.com
@@ -943,23 +1147,23 @@
           </span>
           +82 10 7602 9222
         </a>
-        <a href="https://github.com/abiodun-devs" target="_blank" rel="noopener">
+        <a href="https://github.com/Faithful007" target="_blank" rel="noopener">
           <span class="ico">
-            <img src="assets/github.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="assets/images/github.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M7 3a3 3 0 0 1 1 5.83V15.2a3 3 0 1 1-2 0V8.83A3 3 0 0 1 7 3zm10 0a3 3 0 0 1 1 5.83V10a4 4 0 0 1-4 4h-2.2a3 3 0 1 0 0 2H14a6 6 0 0 0 6-6V8.83A3 3 0 0 1 17 3zM7 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm10 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM7 17a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
           </span>
-          GitHub · abiodun-devs
+          GitHub · Faithful007
         </a>
         <a href="https://www.linkedin.com/in/abiodun-ilugbusi" target="_blank" rel="noopener">
           <span class="ico">
-            <img src="assets/linkedin.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="assets/images/linkedin.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M9 3h6a2 2 0 0 1 2 2v2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 2v2h6V5H9zM4 9v3h16V9H4zm0 5v5h16v-5h-5v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1H4z"/></svg>
           </span>
           LinkedIn · abiodun-ilugbusi
         </a>
         <a href="https://scholar.google.com/citations?hl=en&amp;user=IBVbMjYAAAAJ" target="_blank" rel="noopener">
           <span class="ico">
-            <img src="assets/scholar.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="assets/images/scholar.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
             <svg viewBox="0 0 24 24" style="display:none" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zm0 15.2-6-3.3V11l6 3.3 6-3.3v3.9l-6 3.3z"/></svg>
           </span>
           Google Scholar
